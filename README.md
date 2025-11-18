@@ -1,249 +1,246 @@
-# 📊 **Hospitality Analytics – Power BI Dashboard**
 
-A data analytics project for a multi-city hospitality chain. This project delivers insights on revenue, occupancy, ADR, RevPAR, cancellations, booking platforms, and week-over-week performance trends using Power BI.
+
+# 🧠 **Hospitality Analytics | Power BI • DAX • Power Query • Star Schema • Business Insights**
+
+
+
 
 ---
 
-# 📘 **PROJECT OVERVIEW**
+<!-- Badges -->
 
-This project focuses on analyzing the performance of a multi-city hospitality chain using Power BI. The goal is to understand hotel revenue, occupancy, customer behavior, room performance, and booking patterns across various cities and room categories.
+<p align="center">
+  <img src="https://img.shields.io/badge/Power%20BI-Data%20Visualization-F2C811?style=for-the-badge&logo=Power%20BI&logoColor=black" />
+  <img src="https://img.shields.io/badge/DAX-Analytics-0A75AD?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Power%20Query-M%20Language-4CAF50?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Data%20Modeling-Star%20Schema-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GitHub-Project-181717?style=for-the-badge&logo=github" />
+</p>
 
-The dashboard provides insights for:
+---
+
+# 🏨 **Hospitality Analytics Dashboard – Power BI Project**
+
+A complete end-to-end **Business Intelligence solution** designed to help hospitality leaders make data-driven decisions on revenue, occupancy, customer behavior, cancellations, pricing, and channel performance.
+This repository showcases my expertise across **Power BI, Data Modeling, DAX, Power Query, and Business Analytics**.
+
+---
+
+# 🌐 **PROJECT OVERVIEW**
+
+This project analyzes the performance of a multi-city hospitality chain using **three months of operational data (May–July)**.
+The dashboard translates raw data into actionable insights for:
 
 * Revenue optimization
-* Occupancy growth
-* Channel performance evaluation
-* Cancellation and no-show management
-* Pricing and room-class analytics
-* Week-over-week trend analysis
+* Occupancy improvement
+* Booking platform strategy
+* Cancellation & no-show management
+* Pricing performance (ADR, RevPAR)
+* Room class contribution
+* Week-over-week performance trends
 
-This comprehensive BI solution enables the hospitality management team to **make data-driven decisions**, improve room utilization, boost revenue, and enhance customer experience.
+The end result is a **manager-friendly, interactive analytical dashboard** that empowers leadership to make strategic and operational decisions with confidence.
 
 ---
 
-# 📂 **DATA SOURCE**
+# 📂 **DATA SOURCES**
 
-The analysis is based on **5 CSV datasets** stored in the project folder:
+The analysis is built using **5 structured CSV datasets**, forming a complete star-schema model:
 
-### **1. dim_date.csv**
+### **1. dim_date** — Calendar table (date, month, week number, day type)
 
-Date-level information for 3 months (May–July)
+### **2. dim_hotels** — Hotel metadata (name, category, city)
 
-### **2. dim_hotels.csv**
+### **3. dim_rooms** — Room class definitions
 
-Hotel metadata: property_id, property_name, category, city
+### **4. fact_bookings** — Individual customer booking transactions
 
-### **3. dim_rooms.csv**
+### **5. fact_aggregated_bookings** — Daily room availability & successful bookings
 
-Room metadata: room_class and room type
-
-### **4. fact_bookings.csv**
-
-Transactional booking dataset including:
-
-* booking status
-* check-in/check-out
-* revenue generated & realized
-* number of guests
-* booking platform
-* customer ratings
-
-### **5. fact_aggregated_bookings.csv**
-
-Aggregated room availability & successful bookings per property and room type.
+These datasets collectively provide a **360° view of hotel operations**.
 
 ---
 
 # 🛠 **TOOLS & TECHNOLOGIES USED**
 
-| Category            | Tools                               |
-| ------------------- | ----------------------------------- |
-| BI & Visualization  | **Power BI Desktop**                |
-| Data Transformation | **Power Query (M Language)**        |
-| Calculations & KPIs | **DAX (Data Analysis Expressions)** |
-| Data Modeling       | **Star Schema Design**              |
-| Data Storage        | **CSV Files**                       |
-| Project Management  | **GitHub Repository**               |
+| Category               | Tools                                 |
+| ---------------------- | ------------------------------------- |
+| **BI & Visualization** | Power BI Desktop                      |
+| **Scripting / ETL**    | Power Query (M Language)              |
+| **Metrics / KPIs**     | DAX                                   |
+| **Data Modeling**      | Star Schema (Fact & Dimension Tables) |
+| **Version Control**    | GitHub                                |
+| **Data Format**        | CSV                                   |
 
 ---
 
 # 🔧 **TECHNIQUES USED**
 
-### **1. Data Cleaning**
+### **1️⃣ Data Cleaning & Preparation (Power Query)**
 
-* Adjusted weekend logic (Friday & Saturday = weekend)
-* Standardized column headers
-* Removed redundant fields
-* Applied proper datatypes in Power Query
+* Corrected weekend–weekday logic (Fri & Sat = weekend)
+* Standardized headers & datatypes
+* Removed redundant columns
+* Ensured consistency across fact & dimension tables
 
-### **2. Data Modeling**
+### **2️⃣ Dimensional Data Modeling**
 
-* Built a **Star Schema** with:
+Created a clear **Star Schema**:
 
-  * Fact tables: fact_bookings, fact_aggregated_bookings
-  * Dimension tables: dim_date, dim_hotels, dim_rooms
-* Established one-to-many relationships
+* Fact tables: *fact_bookings*, *fact_aggregated_bookings*
+* Dimensions: *dim_date*, *dim_rooms*, *dim_hotels*
 
-### **3. DAX Calculations**
+### **3️⃣ DAX for Advanced Analytics**
 
-Created **26+ measures** including:
+Developed **26+ professional DAX measures**, including:
 
-* Revenue, ADR, RevPAR
-* Occupancy %
-* Realisation %
+* Revenue, Occupancy, ADR, RevPAR
 * DBRN, DSRN, DURN
-* Week-over-week % changes
-* Room-class and platform splits
+* Realisation %, Cancellation %, No-Show %
+* WoW dynamic percent changes
+* Platform & room class contribution metrics
 
-### **4. Week-over-Week Trend Analysis**
+### **4️⃣ Interactive Dashboard Experience**
 
-Used dynamic DAX measures to compare performance across weeks:
-
-* Revenue WoW Change %
-* ADR WoW Change %
-* RevPAR WoW Change %
-* Occupancy WoW Change %
-
-### **5. Interactive Dashboarding**
-
-* Slicers: City, Room Class, Date Type
+* Dynamic slicers
 * Drill-through pages
-* Dynamic KPI cards
-* Line charts & bar charts
-* Performance comparison visuals
+* KPI scorecards
+* Line & bar charts
+* Comparative analysis visuals
+* Week-by-week trends
+
+This ensures a smooth stakeholder experience.
 
 ---
 
 # 📊 **BUSINESS METRICS (KPIs)**
 
-### **Revenue Metrics**
+### **📌 Revenue Metrics**
 
-* **Revenue Realized**
-* **Revenue Generated**
-* **ADR (Average Daily Rate)**
-* **RevPAR (Revenue Per Available Room)**
+* Revenue Generated
+* Revenue Realized
+* ADR (Average Daily Rate)
+* RevPAR (Revenue Per Available Room)
 
-### **Occupancy & Room Metrics**
+### **📌 Occupancy & Room Utilization**
 
-* **Occupancy %**
-* **Total Bookings**
-* **Total Capacity**
-* **DBRN (Daily Booked Room Nights)**
-* **DSRN (Daily Sellable Room Nights)**
-* **DURN (Daily Utilized Room Nights)**
+* Occupancy %
+* Total Bookings
+* Total Capacity
+* DBRN / DSRN / DURN
 
-### **Customer Behavior Metrics**
+### **📌 Customer & Behavioral Metrics**
 
-* **Cancellation %**
-* **No-Show Rate %**
-* **Realisation %**
-* **Average Rating**
+* Cancellation %
+* No-Show %
+* Realisation %
+* Customer Rating
 
-### **Channel & Category Metrics**
+### **📌 Channel & Category Metrics**
 
-* **Booking % by Platform**
-* **Booking % by Room Class**
+* Booking % by Platform
+* Booking % by Room Class
 
-### **Trend Metrics**
+### **📌 Trend Metrics**
 
-* **WoW Revenue Change %**
-* **WoW Occupancy Change %**
-* **WoW ADR/RevPAR/Realisation Change %**
+* Week-over-Week Revenue Change
+* ADR / RevPAR Change %
+* Occupancy Change %
 
 ---
 
-# 📈 **KEY INSIGHTS FROM DASHBOARD**
+# 📈 **KEY INSIGHTS FROM THE DASHBOARD**
 
-### 🏨 **1. City-Level Performance**
+### 🏙 **1. City-Level Performance**
 
-* **Mumbai** generated the highest revenue but had comparatively lower occupancy.
-* **Hyderabad** achieved **the best occupancy % (~67%)** with strong ratings.
-* **Delhi** showed moderate performance across all KPIs.
-
----
-
-### 💰 **2. Revenue Insights**
-
-* Total Revenue = **₹582M**
-* Highest contribution from **Atliq Exotic** & **Atliq Palace**
-* **ADR stable at ~₹12.7K** across the period
+* **Mumbai** leads in revenue but has weaker occupancy.
+* **Hyderabad** delivers the **highest occupancy (~67%)** and strong customer ratings.
+* **Bangalore** remains stable across major KPIs.
 
 ---
 
-### 🛏 **3. Occupancy & Room Utilization**
+### 💰 **2. Revenue & Pricing Insights**
 
-* Overall Occupancy = **58.55%**
-* **Weekend occupancy higher** than weekdays (64% vs 56%)
-* Presidential rooms have highest ADR but lowest volume
-
----
-
-### 📦 **4. Booking Platform Insights**
-
-* **Direct online + makeyourtrip** contribute the most bookings
-* OTA channels show slightly higher cancellation rates
-* Realisation % fairly stable across platforms (~69%)
+* Total Revenue: **₹582M**
+* Highest performing properties: **Atliq Exotic** & **Atliq Palace**
+* ADR remains stable at **~₹12.7K**
 
 ---
 
-### ❌ **5. Cancellation & No-Show Behavior**
+### 🛏 **3. Occupancy & Demand**
 
-* Average cancellation rate ~25%
-* No-show rate low but impacts revenue leakage
+* Overall Occupancy: **58.55%**
+* **Weekend occupancy (64%) > Weekday occupancy (56%)**
+* Room class performance shows **Presidential rooms have high ADR but low volume**
+
+---
+
+### 📦 **4. Booking Channel Behavior**
+
+* **Direct Online** and **Makeyourtrip** dominate booking contribution
+* OTAs show higher cancellation tendencies
+* Realisation % remains steady (~69%) across channels
+
+---
+
+### ⚠ **5. Cancellations & No-Shows**
+
+* Cancellation rate: **~25%**
+* No-show rate: low but still affects revenue reliability
 
 ---
 
 ### 🔄 **6. Week-over-Week Trends**
 
-* Revenue spikes observed around Week 23 & Week 29
-* Occupancy fluctuates between **50–62% WoW**
-* RevPAR improves on weekends consistently
+* Revenue spikes around Week 23 and Week 29
+* Occupancy fluctuates between **50–62%**
+* RevPAR consistently improves during weekends
 
 ---
 
 # 📑 **RECOMMENDATIONS**
 
-### 🎯 **1. Improve Occupancy in Mumbai & Bangalore**
+### 🎯 **1. Boost Occupancy in Low-Performing Cities**
 
-* Introduce dynamic pricing (lower weekday rates)
-* Focus campaigns on low-performing weeks
+* Deploy dynamic pricing (weekday discounts, weekend surge pricing)
+* Target corporate travelers & long-stay guests
 
-### 📢 **2. Strengthen OTA and Direct Bookings**
+### 💼 **2. Strengthen Direct Booking Strategy**
 
-* Improve incentives for direct online bookings
-* Optimize platform performance with targeted discounts
+* Promote direct booking discounts
+* Reduce dependence on OTAs
 
-### 🤝 **3. Reduce Cancellation Rate**
+### 🛑 **3. Reduce Cancellations**
 
-* Implement partial non-refundable models
-* Offer rebooking incentives
+* Introduce partially refundable models
+* Provide rebooking credits to minimize revenue leakage
 
-### 🛌 **4. Optimize Room Class Revenue**
+### 🏷 **4. Enhance Revenue from Premium Rooms**
 
-* Promote Elite & Premium rooms with packaged offers
-* Increase visibility of Presidential rooms
+* Upsell Elite/Premium rooms with packaged deals
+* Promote high-ADR room classes during weekends
 
-### ⭐ **5. Enhance Customer Satisfaction**
+### ⭐ **5. Improve Customer Experience**
 
-* Improve service quality in properties with low ratings (e.g., Mumbai Atliq Bay)
-* Analyze rating correlation with occupancy
+* Conduct service audits for low-rated hotels
+* Use customer feedback loops for continuous improvement
 
-### 🗓 **6. Leverage Weekend Demand**
+### 🧳 **6. Leverage Weekend Demand**
 
-* Increase weekend pricing (yield management)
-* Promote weekday packages to balance occupancy
+* Launch weekend-specific promotional bundles
+* Offer weekday packages to balance occupancy
 
 ---
 
 # 🙏 **ACKNOWLEDGMENT**
 
-I would like to thank:
+Special thanks to:
 
-* **Codebasics** for providing the hospitality challenge dataset.
-* **Power BI community** for learning resources.
+* **Codebasics** for the dataset used in this project
+* **Power BI Community** for knowledge sharing
 
 
-This project was completed as a part of a learning journey in data analytics & business intelligence.
+This project showcases my ability to build **end-to-end BI solutions**, from raw data to powerful insights.
 
 ---
 
